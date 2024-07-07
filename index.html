@@ -12,13 +12,13 @@
   <button onclick="handleClick()">Click here</button>
 </div>
 <script type="text/javascript">
-  const worker = new Worker('src/js/worker.js');
+  const worker = new Worker('src/js/app.worker.js');
   console.log('worker ', worker);
-  
+
   worker.onmessage = (event) => {
     console.log('ToanDN received message ', event.data);
   }
-  
+
   function handleClick() {
     console.log('handle click');
     worker.postMessage('Send to ToanTT!');
