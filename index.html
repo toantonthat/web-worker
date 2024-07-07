@@ -9,18 +9,9 @@
 
 <body>
 <div>
-  <button onclick="handleClick()">Click here</button>
+
 </div>
 <script type="text/javascript">
-  const worker = new Worker('src/js/app.worker.js');
-
-  handleClick = () => {
-    worker.postMessage('hello, Worker');
-
-    worker.onmessage = (event) => {
-      console.log('ToanTT received: ', event.data)
-    }
-  }
 </script>
 </body>
 
