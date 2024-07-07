@@ -13,15 +13,16 @@
 </div>
 <script type="text/javascript">
   const worker = new Worker('src/js/app.worker.js');
+  const msg = 'Hello ToanDN';
   console.log('worker ', worker);
 
   worker.onmessage = (event) => {
-    console.log('ToanDN received message ', event.data);
+    console.log('ToanTT received message: ', event.data);
   }
 
   function handleClick() {
-    console.log('handle click');
-    worker.postMessage('Send to ToanTT!');
+    console.log('ToanTT sends ', msg);
+    worker.postMessage(msg);
   }
 </script>
 </body>
