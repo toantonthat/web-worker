@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web worker</title>
+</head>
+
+<body>
+<div>
+  <button onclick="handleClick()">Click here</button>
+</div>
+<script type="text/javascript">
+  const worker = new Worker('src/js/worker.js');
+  console.log('worker ', worker);
+  
+  worker.onmessage = (event) => {
+    console.log('ToanDN received message ', event.data);
+  }
+  
+  function handleClick() {
+    console.log('handle click');
+    worker.postMessage('Send to ToanTT!');
+  }
+</script>
+</body>
+
+</html>
